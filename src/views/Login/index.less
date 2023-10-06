@@ -1,0 +1,50 @@
+.form-header {
+  height: 62px;
+  &--title,
+  &--subtitle {
+    font-weight: 600;
+  }
+}
+
+.form-content {
+  margin-top: 40px;
+}
+.form-change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.form-button {
+  width: 100%;
+  & + .form-button {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+// 第三方
+.form-third {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  i {
+    font-size: 30px;
+    cursor: pointer;
+    & + i {
+      margin-left: 20px;
+    }
+    &.icon-dingding {
+      color: #00a5fd;
+    }
+    &.icon-zhifubao {
+      color: #027aff;
+    }
+    &.icon-qiyeweixin1 {
+      color: #0082ef;
+    }
+  }
+}
+
+:deep(.el-form-item) {
+  margin-bottom: 40px;
+}

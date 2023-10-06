@@ -1,0 +1,128 @@
+/** layout */
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &.layout--collapse {
+    .layout-menu {
+      width: @menu-collapse-width;
+    }
+    .layout-main {
+      width: calc(100% - @menu-collapse-width;);
+    }
+  }
+}
+.layout-menu {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: @menu-width;
+  transition: width var(--transition-time--03) ease-in;
+}
+.layout-main {
+  flex-grow: 1;
+  width: calc(100% - @menu-width);
+}
+// logo
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: @header-height;
+  font-size: 14px;
+  color: @logo-color;
+  background-color: @logo-bg;
+}
+// header
+.header {
+  height: @header-height;
+  line-height: @header-height;
+  background-color: @header-bg;
+}
+// sidebar
+.sidebar {
+  flex-grow: 1;
+  height: 100%;
+  color: @menu-color;
+  background-color: @menu-bg;
+}
+// main
+.main {
+  flex-grow: 1;
+  height: 100%;
+  padding: var(--padding-spacing);
+  background-color: @main-bg;
+  position: relative;
+}
+.sidebar-wrapper {
+  overflow-x: hidden;
+}
+// menu
+.el-menu {
+  border-right: none;
+  background-color: @menu-bg;
+  .el-menu-item {
+    height: @menu-height;
+    min-width: @menu-width;
+    line-height: @menu-height;
+    transition: width var(--transition-time--03) ease-in;
+  }
+}
+.el-sub-menu__title {
+  height: @menu-height;
+  line-height: @menu-height;
+  color: @menu-color;
+  &:hover {
+    color:  @menu-hover-color;
+    background-color: @menu-hover-bg;
+  }
+}
+.el-menu-item {
+  height: @menu-height;
+  color: @menu-color;
+  &:hover {
+    color: @menu-hover-color;
+    background-color: @menu-hover-bg;
+  }
+  &.is-active {
+    color: @menu-active-color;
+    background-color: @menu-active-bg;
+  }
+}
+.el-sub-menu {
+  .el-menu {
+    background-color: @submenu-bg;
+  }
+  &.is-active .el-sub-menu__title {
+    color: @submenu-active-color;
+  }
+  .el-menu-item {
+    &:hover {
+      color: @submenu-hover-color;
+      background-color: @submenu-hover-bg;
+    }
+    &.is-active {
+      color: @submenu-active-color;
+      background-color: @submenu-active-bg;
+    }
+  }
+}
+// menu  collapse
+.el-menu--collapse {
+  .el-menu-item {
+    &.is-active {
+      background-color: @menu-collapse-active-bg;
+      border-left: 3px solid @menu-active-bg;
+    }
+  }
+  .el-sub-menu {
+    &.is-active .el-sub-menu__title {
+      color: @menu-active-color;
+      background-color: @menu-collapse-active-bg;
+      border-left: 3px solid @menu-active-bg;
+    }
+  }
+}
